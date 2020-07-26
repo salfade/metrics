@@ -1,36 +1,7 @@
 # Tailwind UI metrics in Nova style
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/metrics.svg?style=flat-square)](https://packagist.org/packages/spatie/metrics)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/metrics/run-tests?label=tests)](https://github.com/spatie/metrics/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/metrics.svg?style=flat-square)](https://packagist.org/packages/spatie/metrics)
-
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-Learn how to create a package like this one, by watching our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
-## Installation
-
-You can install the package via composer:
-
-```bash
-composer require spatie/package-metrics-laravel
-```
-
 You can publish and run the migrations with:
 
-```bash
-php artisan vendor:publish --provider="Salfade\Metric\MetricServiceProvider" --tag="migrations"
-php artisan migrate
-```
 
 You can publish the config file with:
 ```bash
@@ -47,8 +18,30 @@ return [
 ## Usage
 
 ``` php
-$metrics = new Salfade\Metric();
-echo $metrics->echoPhrase('Hello, Salfade!');
+php artisan metric:value UserCount
+
+
+namespace App\Metrics;
+
+use App\User;
+use Salfade\Metric\Metrics\Value;
+
+class UserCount extends Value
+{
+    public $title = 'Total Users';
+    public $icon = 'Users';
+
+    public function url():string
+    {
+        return route('user.index');
+    }
+
+    public function value()
+    {
+        //@TODO return the value for the value metric
+        return User::count();
+    }
+}
 ```
 
 ## Testing
@@ -67,7 +60,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security related issues, please email admin@salfade.com instead of using the issue tracker.
 
 ## Credits
 
