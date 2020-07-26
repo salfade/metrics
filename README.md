@@ -1,5 +1,7 @@
 # Tailwind UI metrics in Nova style
 
+## WARNING: This package is under development. 
+
 You can publish and run the migrations with:
 
 
