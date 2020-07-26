@@ -4,6 +4,7 @@ namespace Salfade\Metric;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Salfade\Metric\Commands\MetricValueCommand;
 
 class MetricServiceProvider extends ServiceProvider
@@ -30,6 +31,7 @@ class MetricServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'metrics');
 
         Blade::component('metrics::metric-grid', 'metrics-grid');
+        Livewire::component('metric-value', MetricValueComponent::class);
 
     }
 

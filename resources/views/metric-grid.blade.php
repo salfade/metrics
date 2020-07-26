@@ -3,7 +3,7 @@
 
     @foreach ($metrics as $metric)
 
-        <livewire:xmetric title="{{$metric->title()}}" value="{{$metric->value()}}" icon="{{$metric->icon()}}"
+        <livewire:metric-value title="{{$metric->title()}}" value="{{$metric->value()}}" icon="{{$metric->icon()}}"
                           url="{{$metric->url()}}"/>
 
     @endforeach
