@@ -1,0 +1,18 @@
+<?php
+
+namespace DummyNamespace;
+
+use Salfade\Metric\Metrics\Value;
+
+class DummyClass extends Value
+{
+    //public $title;
+    //public $icon;
+    //public $url;
+
+    public function value()
+    {
+        //@TODO return the value for the value metric
+        return 0;
+    }
+}
