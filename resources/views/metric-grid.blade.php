@@ -8,6 +8,8 @@
         @elseif($metric instanceof Salfade\Metric\MetricValueComponent::class)
             <livewire:metric-value title="{{$metric->title()}}" value="{{$metric->value()}}" icon="{{$metric->icon()}}"
                 url="{{$metric->url()}}" />
+        @else
+            Something wrong! no componet found
         @endif
 
     @endforeach
