@@ -3,9 +3,9 @@
 
     @foreach ($metrics as $metric)
 
-        @if($metric instanceof Salfade\Metric\TrendMetrics::class)
+        @if($metric instanceof Salfade\Metric\TrendMetrics)
             <livewire:metric-trend />
-        @elseif($metric instanceof Salfade\Metric\MetricValueComponent::class)
+        @elseif($metric instanceof Salfade\Metric\MetricValueComponent)
             <livewire:metric-value title="{{$metric->title()}}" value="{{$metric->value()}}" icon="{{$metric->icon()}}"
                 url="{{$metric->url()}}" />
         @else
