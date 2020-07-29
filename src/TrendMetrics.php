@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace Salfade\Metric;
 
 use Livewire\Component;
 use Illuminate\Support\Str;
