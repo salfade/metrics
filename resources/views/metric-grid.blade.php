@@ -3,9 +3,9 @@
 
     @foreach ($metrics as $metric)
 
-        @if($metric instanceof TrendMetrics::class)
+        @if($metric instanceof TrendMetrics)
             <livewire:metric-trend />
-        @elseif($metric instanceof MetricValueComponent::class)
+        @elseif($metric instanceof MetricValueComponent)
             <livewire:metric-value title="{{$metric->title()}}" value="{{$metric->value()}}" icon="{{$metric->icon()}}"
                 url="{{$metric->url()}}" />
         @endif
