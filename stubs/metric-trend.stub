@@ -1,0 +1,21 @@
+<?php
+
+namespace DummyNamespace;
+
+use Salfade\Metric\Metrics\TrendMetrics;
+
+class DummyClass extends TrendMetrics
+{
+    public $title = 'Title';
+    public $ranges = [
+        5 => '5 Days',
+        10 => '10 Days',
+        15 => '15 Days',
+    ];
+
+    public function getData($rangeValue)
+    {
+        //@TODO return the values as an array
+        return range(1, $rangeValue);
+    }
+}

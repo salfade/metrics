@@ -2,9 +2,11 @@
 
 namespace Salfade\Metric;
 
+use App\Http\Livewire\TrendMetrics;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
+use Salfade\Metric\Commands\MetricTrendCommand;
 use Salfade\Metric\Commands\MetricValueCommand;
 
 class MetricServiceProvider extends ServiceProvider
@@ -20,19 +22,17 @@ class MetricServiceProvider extends ServiceProvider
                 __DIR__ . '/../resources/views' => base_path('resources/views/vendor/metrics'),
             ], 'views');
 
-
             $this->commands([
                 MetricValueCommand::class,
+                MetricTrendCommand::class,
             ]);
-
-
         }
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'metrics');
 
         Blade::component('metrics::metric-grid', 'metrics-grid');
         Livewire::component('metric-value', MetricValueComponent::class);
-
+        Livewire::component('metric-trend', TrendMetrics::class);
     }
 
     public function register()
