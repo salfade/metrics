@@ -5,7 +5,7 @@ namespace Salfade\Metric;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
-class TrendMetrics extends Component
+class TrendMetricsComponent extends Component
 {
     public $componentId;
     public $title = '';
@@ -15,6 +15,11 @@ class TrendMetrics extends Component
         15 => '15 Days',
     ];
     public $data = [];
+
+    public function __construct()
+    {
+        $this->id = Str::random(16);
+    }
 
     public function getDataByRange($rangeValue)
     {

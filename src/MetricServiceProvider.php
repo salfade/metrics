@@ -2,7 +2,6 @@
 
 namespace Salfade\Metric;
 
-use App\Http\Livewire\TrendMetrics;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
@@ -32,7 +31,7 @@ class MetricServiceProvider extends ServiceProvider
 
         Blade::component('metrics::metric-grid', 'metrics-grid');
         Livewire::component('metric-value', MetricValueComponent::class);
-        Livewire::component('metric-trend', TrendMetrics::class);
+        Livewire::component('metric-trend', TrendMetricsComponent::class);
     }
 
     public function register()

@@ -2,9 +2,9 @@
 
 namespace DummyNamespace;
 
-use Salfade\Metric\Metrics\TrendMetrics;
+use Salfade\Metric\TrendMetricsComponent;
 
-class DummyClass extends TrendMetrics
+class DummyClass extends TrendMetricsComponent
 {
     public $title = 'Title';
     public $ranges = [
