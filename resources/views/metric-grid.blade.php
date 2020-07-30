@@ -2,7 +2,7 @@
 <div class="mt-5 mb-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
     @foreach ($metrics as $metric)
-         @dd($metric)
+         @dd(get_parent_class($metric))
         @if($metric instanceof Salfade\Metric\TrendMetrics)
             <livewire:metric-trend />
         @elseif($metric instanceof Salfade\Metric\MetricValueComponent)
