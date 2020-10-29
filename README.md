@@ -1,9 +1,6 @@
-# Tailwind UI metrics in Nova style
+# Tailwind UI metrics in Larvel Nova style
 
 ## WARNING: This package is under development. 
-
-You can publish and run the migrations with:
-
 
 You can publish the config file with:
 ```bash
